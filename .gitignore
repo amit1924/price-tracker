@@ -20,6 +20,7 @@ npm-debug.log*
 .env.test.local
 .env.production.local
 .env*.local
+.env
 
 # Package Manager
 /yarn-error.log
