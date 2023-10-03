@@ -16,6 +16,7 @@
     "mongoose": "^7.5.3",
     "next": "latest",
     "nodemailer": "^6.9.5",
+    "puppeteer": "^21.3.6",
     "react": "latest",
     "react-dom": "latest",
     "react-responsive-carousel": "^3.2.23",

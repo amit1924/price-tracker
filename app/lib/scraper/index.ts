@@ -57,6 +57,14 @@ export async function scrapeAmazonProduct(url: string) {
     const discountRate = $('.savingsPercentage').text().replace(/[-%]/g, "");
 
     const description = extractDescription($)
+     // Additional scraping for reviews and ratings
+     const starsContainer = $('span.a-declarative');
+     const stars = $('i.a-icon.a-icon-star').text().trim();
+     const reviewsCount = starsContainer.find('span.a-size-base').text().trim();
+
+
+     // Convert reviewsCount to a number and divide by a factor
+const reviewsCountDecimal = parseFloat(reviewsCount.replace(/[^\d.]/g, '')) / 1;
 
     // Construct data object with scraped information
     const data = {
@@ -69,8 +77,10 @@ export async function scrapeAmazonProduct(url: string) {
       priceHistory: [],
       discountRate: Number(discountRate),
       category: 'category',
-      reviewsCount:100,
-      stars: 4.5,
+      reviewsCount: reviewsCountDecimal,
+      // reviewsCount: Number(reviewsCount.replace(/[^\d]/g, '')), 
+      stars: Number(stars.split(' ')[0]),
+     
       isOutOfStock: outOfStock,
       description,
       lowestPrice: Number(currentPrice) || Number(originalPrice),
