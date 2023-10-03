@@ -29,7 +29,7 @@ const HeroCarousel = () => {
             alt={image.alt}
             width={484}
             height={484}
-            className="object-contain"
+            className="object-contain bg-black"
             key={image.alt}
           />
         ))}

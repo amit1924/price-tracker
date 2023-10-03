@@ -30,7 +30,7 @@
   }
 
   .small-text {
-    @apply flex gap-2 text-sm font-medium text-primary;
+    @apply flex gap-2 text-sm font-extrabold text-purple-500;
   }
 
   .paragraph-text {

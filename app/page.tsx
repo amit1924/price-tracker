@@ -1,8 +1,8 @@
-import HeroCarousel from "./components/HeroCarousel"
-import Searchbar from "./components/Searchbar"
-import Image from "next/image"
-import { getAllProducts } from "./lib/actions"
-import ProductCard from "./components/ProductCard"
+import HeroCarousel from "./components/HeroCarousel";
+import Searchbar from "./components/Searchbar";
+import Image from "next/image";
+import { getAllProducts } from "./lib/actions";
+import ProductCard from "./components/ProductCard";
 
 const Home = async () => {
   const allProducts = await getAllProducts();
@@ -11,10 +11,10 @@ const Home = async () => {
     <>
       <section className="px-6 md:px-20 py-24">
         <div className="flex max-xl:flex-col gap-16">
-          <div className="flex flex-col justify-center"> 
+          <div className="flex flex-col justify-center">
             <p className="small-text">
-              Smart Shopping Starts From Here:
-              <Image 
+              <h2 className="text-2xl">Shop wisely 😂</h2>
+              <Image
                 src="/assets/icons/arrow-right.svg"
                 alt="arrow-right"
                 width={16}
@@ -24,12 +24,14 @@ const Home = async () => {
             </p>
 
             <h1 className="head-text">
-              Unleash the Power of
-              <span className="text-primary"> PriceTracker</span>
+              Track any Amazon Products by using this
+              <span className="text-primary"> Algorithm</span>
             </h1>
 
             <p className="mt-6">
-              Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.
+              Powerful, self-serve product and growth analytics to help you
+              convert, engage, and retain more ,just paste the link of amazon
+              products below and see exciting deals.
             </p>
 
             <Searchbar />
@@ -49,7 +51,7 @@ const Home = async () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
